@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <!-- head의 시작 -->
+    <head>
+        <meta charset="UTF-8">
+        <title>
+            order
+        </title>
+    </head>
+    <body>
+        <form action="#" method="post">
+            <fieldset>
+                <legend><strong>개인정보</strong></legend>
+                <label for="name">이름 </label>
+                <input type="text" name="name" placeholder="여백 없이 입력">
+                <br>
+                <label for="phone">연락처 </label>
+                <input type="text" name="phone" placeholder="연락 가능한 번호">
+            </fieldset>
+            
+            <fieldset>
+                <legend><strong>배송지 정보</strong></legend>
+                <label for="address">주소 </label>
+                <input type="text" name="address">
+                <br>
+                <label for="telephone">전화번호 </label>
+                <input type="text" name="telephone">
+            </fieldset>
+            
+            <fieldset>
+                <legend><strong>주문 정보</strong></legend>
+                <input type="checkbox" name="products">
+                <label for="address">과테말라 안티구아(100g) </label>
+                <input type="number" name="product1">개
+                <br>
+                <input type="checkbox" name="products">
+                <label for="address">인도네시아 만델링(100g) </label>
+                <input type="number" name="product2">개
+                <br>
+                <input type="checkbox" name="products">
+                <label for="address">탐라는도다(블렌딩)(100g) </label>
+                <input type="number" name="product3">개                
+            </fieldset>
+
+            <input type="submit" value="주문하기">
+            <input type="submit" value="취소하기">
+        </form>
+
+    </body>
+</html>

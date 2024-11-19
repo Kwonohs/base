@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <!-- asdasdsadasd -->
+        <meta charset="UTF-8">
+        <title>
+            unsupervised_learning
+        </title>
+    </head>
+    <body>
+        <h1>
+            Unsupervised learning
+        </h1>
+        <div id="a">
+            <strong>Unsupervised learning</strong> is a framework in machine learning where,<br>
+            in contrast to supervised learning, algorithms learn patterns exclusively<br>
+            from unlabeled data.[1] Other frameworks in the spectrum of supervisions<br>
+            include weak- or semi-supervision, where a small portion of the data<br>
+            is tagged, and self-supervision. Some researchers consider self-supervised<br>
+            learning a form of unsupervised learning.[2]
+            
+            Conceptually, unsupervised learning divides into the aspects of data,<br>
+            training, algorithm, and downstream applications. Typically,<br>
+            the dataset is harvested cheaply "in the wild", such as massive text<br>
+            corpus obtained by web crawling, with only minor filtering (such as Common Crawl).<br>
+            This compares favorably to supervised learning, where the dataset<br>
+            (such as the ImageNet1000) is typically constructed manually, which is much more expensive.<br>
+
+            There were algorithms designed specifically for unsupervised learning,<br>
+            such as clustering algorithms like k-means, dimensionality reduction techniques<br>
+            like principal component analysis (PCA), Boltzmann machine learning, and autoencoders.<br>
+            After the rise of deep learning, most large-scale unsupervised learning have been<br>
+            done by training general-purpose neural network architectures by gradient descent,<br>
+            adapted to performing unsupervised learning by designing an appropriate training procedure.<br>
+
+            Sometimes a trained model can be used as-is, but more often they are modified<br>
+            for downstream applications. For example, the generative pretraining method trains a model<br>
+            to generate a textual dataset, before finetuning it for other applications,<br>
+            such as text classification.[3][4] As another example, autoencoders are trained to good features,<br>
+            which can then be used as a module for other models, such as in a latent diffusion model.<br>
+        </div>
+        <div id="b">
+            <h2>Training</h2>
+                <p>During the learning phase, an unsupervised network tries to mimic<br>
+                    the data it's given and uses the error in its mimicked output to correct itself<br>
+                    (i.e. correct its weights and biases). Sometimes the error is expressed as a low probability<br>
+                    that the erroneous output occurs, or it might be expressed as an unstable<br>
+                    high energy state in the network.<br>
+                    In contrast to supervised methods' dominant use of backpropagation,<br>
+                    unsupervised learning also employs other methods including: Hopfield learning rule,<br>
+                    Boltzmann learning rule, Contrastive Divergence, Wake Sleep, Variational Inference,<br>
+                    Maximum Likelihood, Maximum A Posteriori, Gibbs Sampling, and backpropagating<br>
+                    reconstruction errors or hidden state reparameterizations. See the table below for more details.</p>
+        </div>
+        <div id="c">
+            <h2>Energy</h2>
+                <p>
+                    An energy function is a macroscopic measure of a network's activation state.<br>
+                    In Boltzmann machines, it plays the role of the Cost function.<br>
+                    This analogy with physics is inspired by Ludwig Boltzmann's analysis of a gas'<br>
+                    macroscopic energy from the microscopic probabilities of particle motion<br>
+                    p∝e−E/kT{\displaystyle p\propto e^{-E/kT}}, where k is the Boltzmann<br>
+                    constant and T is temperature. In the RBM network the relation is<br>
+                    p=e−E/Z{\displaystyle p=e^{-E}/Z},[5] where p{\displaystyle p} and E<br>
+                    {\displaystyle E} vary over every possible activation pattern and Z=∑<br>
+                    All Patterns e−E(pattern){\displaystyle \textstyle<br>
+                    {Z=\sum _{\scriptscriptstyle {\text{All Patterns}}}e^{-E({\text{pattern}})}}}.<br>
+                    To be more precise, p(a)=e−E(a)/Z{\displaystyle p(a)=e^{-E(a)}/Z},<br>
+                    where a {\displaystyle a} is an activation pattern of all neurons<br>
+                    (visible and hidden). Hence, some early neural networks bear<br>
+                    the name Boltzmann Machine. Paul Smolensky calls −E <br>
+                    {\displaystyle -E\,} the Harmony. A network seeks low energy which is high Harmony.
+                </p>
+        </div>
+        <div id="d">
+            <h2>Networks</h2>
+            <p>
+                This table shows connection diagrams of various unsupervised networks,<br>
+                the details of which will be given in the section Comparison of Networks.<br>
+                Circles are neurons and edges between them are connection weights.<br>
+                As network design changes, features are added on to enable new capabilities<br>
+                or removed to make learning faster. For instance, neurons change between<br>
+                deterministic (Hopfield) and stochastic (Boltzmann) to allow robust output,<br>
+                weights are removed within a layer (RBM) to hasten learning, or connections are allowed<br>
+                to become asymmetric (Helmholtz).
+            </p>
+        </div>
+        <div id="e">
+            <table>
+                <tr>
+                    <th>Hopfield</th>
+                    <th>Boltzmann</th>
+                    <th>RBM</th>
+                    <th>Stacked Boltzmann</th>
+                </tr>
+                <tr>
+                    <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Hopfield-net-vector.svg/330px-Hopfield-net-vector.svg.png", width="200"></td>
+                    <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Boltzmannexamplev1.png/330px-Boltzmannexamplev1.png", width="200"></td>
+                    <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Restricted_Boltzmann_machine.svg/330px-Restricted_Boltzmann_machine.svg.png", width="200"></td>
+                    <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Stacked-boltzmann.png/330px-Stacked-boltzmann.png", width="200"></td>
+                </tr>
+                <tr>
+                    <td>A network based on magnetic<br>
+                        domains in iron with a single<br>
+                        self-connected layer. It can<br>
+                        be used as a content addressable memory.</th>
+                    <td>Network is separated into 2 layers<br>
+                        (hidden vs. visible), but still<br>
+                        using symmetric 2-way weights.<br>
+                        Following Boltzmann's thermodynamics,<br>
+                        individual probabilities give<br>
+                        rise to macroscopic energies.</th>
+                    <td>Restricted Boltzmann Machine.<br>
+                        This is a Boltzmann machine where<br>
+                        lateral connections within a layer<br>
+                        are prohibited to make analysis tractable.</th>
+                    <td>This network has multiple RBM's to<br>
+                        encode a hierarchy of hidden features.<br>
+                        After a single RBM is trained, another<br>
+                        blue hidden layer (see left RBM) is added,<br>
+                        and the top 2 layers are trained as a<br>
+                        red & blue RBM. Thus the middle layers of<br>
+                        an RBM acts as hidden or visible, depending<br>
+                        on the training phase it is in.</th>
+                </tr>
+            </table>
+        </div>
+        <div id="f">
+            <table>
+                <tr>
+                    <th>Helmholtz</th>
+                    <th>Autoencoder</th>
+                    <th>VAE</th>
+                </tr>
+                <tr>
+                    <th>Helmholtz</th>
+                    <th>Autoencoder</th>
+                    <th>VAE</th>
+                </tr>
+                <tr>
+                    <th>Helmholtz</th>
+                    <th>Autoencoder</th>
+                    <th>VAE</th>
+                </tr>
+            </table>
+        </div>
+    </body>
