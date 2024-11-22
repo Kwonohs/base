@@ -1,0 +1,68 @@
+#### 조작
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DOM Properties Example</title>
+<style>
+    /* 초기 스타일 */
+    .original-box {
+    background-color: lightgray;
+    width: 200px;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+    border: 1px solid black;
+    }
+    .new-box {
+    background-color: lightgreen;
+    }
+    .additional-box {
+    border: 3px dashed red;
+    }
+</style>
+</head>
+<body>
+<!-- HTML 요소 -->
+<div id="myDiv" class="original-box">Hello World!</div>
+<button onclick="changeInnerHTML()">Change InnerHTML</button>
+<button onclick="changeTextContent()">Change TextContent</button>
+<button onclick="changeClassName()">Change Class</button>
+<button onclick="changeStyle()">Change Style</button>
+
+<script>
+    // 1. .innerHTML
+    // 요소 내부의 HTML 콘텐츠를 변경
+    function changeInnerHTML() {
+    const myDiv = document.getElementById("myDiv");
+    myDiv.innerHTML = "<p>Goodbye, world!</p>";
+    }
+
+    // 2. .textContent
+    // 요소의 텍스트 내용을 변경 (HTML 태그를 제거하고 텍스트만 변경)
+    function changeTextContent() {
+    const myDiv = document.getElementById("myDiv");
+    myDiv.textContent = "New Text Content";
+    }
+
+    // 3. .className
+    // 요소의 클래스 이름을 변경하거나 추가
+    function changeClassName() {
+    const myDiv = document.getElementById("myDiv");
+    myDiv.className = "new-box"; // 기존 클래스 대체
+    myDiv.className += " additional-box"; // 클래스 추가
+    }
+
+    // 4. .style
+    // 요소의 인라인 스타일을 변경
+    function changeStyle() {
+    const myDiv = document.getElementById("myDiv");
+    myDiv.style.backgroundColor = "blue"; // 배경색 변경
+    myDiv.style.color = "white"; // 텍스트 색상 변경
+    myDiv.style.fontWeight = "bold"; // 텍스트 굵게 설정
+    }
+</script>
+</body>
+</html>

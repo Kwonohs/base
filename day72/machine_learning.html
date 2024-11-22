@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <!-- head의 시작 -->
+    <head>
+        <meta charset="UTF-8">
+        <title>
+            hello world
+        </title>
+        <style>
+            .fadeIn {
+                opacity: 0;
+                transition: opacity 1s ease-in-out;
+            }
+            .fadeIn.visible {
+                opacity: 1;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <!-- 헤더 부분: 웹 페이지의 제목 및 네비게이션 메뉴 -->
+            <h1> AI </h1>
+            
+            <nav>               
+                <a href="">profile</a> <!-- profile 링크 -->
+                <a href="xcjvslrjsklgsdl@gmail.com">email</a> <!-- 이메일 링크 -->
+            </nav>
+            <br>
+            <nav>               
+                <!-- AI 관련 학습 방식으로 이동하는 네비게이션 링크들 -->
+                <a href="#supervised_learning">Supervised Learning</a>
+                <a href="#unsupervised_learning">Unsupervised Learning</a>
+                <a href="#reinforcement_learning">Reinforcement Learning</a>
+            </nav>
+        </header>
+        
+        <main>            
+            <!-- 본문: 머신러닝에 대한 설명 -->
+            <div class="box fadeIn" style="height: 500px;">
+            <h2> Machine Learning </h2>
+            <figure>
+                <img src="https://miro.medium.com/v2/resize:fit:2796/1*FUZS9K4JPqzfXDcC83BQTw.png" alt="machine learning category" width="700"> <!-- 머신러닝 이미지 -->
+            </figure>
+            
+            <section>
+                <!-- 지도 학습 관련 섹션 -->
+                <div id="supervised_learning">
+                    <h3> Supervised Learning </h3>
+                    <img src="https://www.kdnuggets.com/wp-content/uploads/mehreen_understanding_supervised_learning_theory_overview_6.png" alt="supervised_learning" width="700">
+                    <p> <b>지도 학습.</b> </p> 
+                    <p> <strong>label</strong>이 주어짐.  </p>
+                    
+                    <p> 종류 </p>
+                    <ul>
+                        <li>서포트 벡터 머신 (support vector machine)</li>
+                        <li>은닉 마르코프 모델 (Hidden Markov model)</li>
+                        <li>회귀 분석 (Regression)</li>
+                        <li>신경망 (Neural network)</li>
+                        <li>나이브 베이즈 분류 (Naive Bayes Classification)</li>
+                    </ul>
+
+                    <!-- 외부 링크로 'Supervised Learning'에 대한 자세한 정보를 제공 -->
+                    <a href="https://en.wikipedia.org/wiki/Supervised_learning" target="_blank">위키에서 자세한 내용 보기</a>
+                </div>
+            </section>
+        </div>
+        <div class="box fadeIn">
+
+            <section>
+                <!-- 비지도 학습 관련 섹션 -->
+                <div id="unsupervised_learning">
+                    <h3> Unupervised Learning </h3>
+                    <img src="https://databasetown.com/wp-content/uploads/2023/05/Unsupervised-Learning-1536x1090.jpg" alt="supervised_learning" width="700">
+                    <i>비지도 학습.</i>
+                    <br>
+                    <em>label</em>이 없음.
+
+                    <p> 종류 </p>
+                    <ol>
+                        <li>hierarchial clustering</li>
+                        <li>dbscan</li>
+                        <li>kmeans</li>
+                    </ol>
+
+                    <!-- 비지도 학습에 대한 더 많은 정보를 위한 링크 -->
+                    <a href="./unsupervised_learning.html" target="_blank">자세한 내용을 보려면 클릭</a>
+                </div>
+            </section>
+        </div>
+        <div class="box fadeIn">
+            <!-- 강화 학습 관련 섹션 -->
+            <div id="reinforcement_learning">
+                <h3> Reinforcement Learning </h3>
+                <img src="./images/Reinforcement-Learning.webp" alt="supervised_learning" width="700">
+                <p> <u>강화학습.</u> </p>
+                <p> 보상을 최대화. </p>
+
+                <p> 강화학습 종류 </p>
+                <ul>
+                    <li>model-free RL</li>
+                    <li>model-based RL</li>
+                </ul>
+
+                <p> model-free RL </p>
+                <ol>
+                    <li>Value Iteration</li>
+                    <li>Policy Iteration</li>
+                </ol>
+
+                <p> model-based RL </p>
+                <ol>
+                    <li>Given the Model</li>
+                    <li>Learn the Model</li>
+                </ol>
+                
+                <!-- 모델에 따른 강화 학습 방법을 테이블로 정리 -->
+                <table>
+                    <tr>
+                        <th>Given the Model</th>
+                        <th>Learn the Model</th>
+                    </tr>
+                    <tr>
+                        <td>Dyna-Q</td>
+                        <td>World Models</td>
+                    </tr>
+                    <tr>
+                        <td>Alpha Zero</td>
+                        <td>I2A</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>MBMF</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>MBVE</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <hr>
+        <script>
+            const fadeInElements = document.querySelectorAll(".fadeIn")
+
+            function checkVisibility() {
+                const windowHeight = window.innerHeight;
+                fadeInElements.forEach(element => {
+                    const rectangle = element.getBoundingClientRect();
+                    if (rectangle.top <= windowHeight - 100){
+                        element.classList.add("visible")
+                    }
+                })
+            }
+
+            window.addEventListener("scroll", checkVisibility);
+            window.addEventListener("load", checkVisibility);
+        </script>
+    </body>
+    
+    </main>
+
+   
+</html>

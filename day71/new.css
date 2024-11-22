@@ -1,0 +1,24 @@
+.first{
+    margin-bottom: 40px;
+    margin-left: -20px;
+    margin-right: -20px;
+}
+
+.second{
+    background: #222222;
+    color: #FFFFFF;
+    padding: 20px
+}
+
+.third{
+    text-align: center;
+    
+}
+
+.h1_first{
+    color: red;
+}
+
+.strong_first{
+    color: blue;
+}

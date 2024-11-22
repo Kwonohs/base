@@ -1,0 +1,27 @@
+#supervised_learning li {
+    color: blue;
+    font-size: 16px;
+}
+
+
+#unsupervised li {
+    color: red;
+    font-size: 20px;
+}
+
+#reinforcement_learning ul > li {
+    color: green;
+    font-size: 14px;
+}
+#reinforcement_learning ol > li {
+    color: yellow;
+    font-size: 20px;
+}
+
+div {
+    font-family: Arial;
+}
+
+a[href^="https:"] {
+    color: red;
+}

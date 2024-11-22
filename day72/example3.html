@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title> asd </title>
+    
+    <body>
+        <h2>Timer</h2>
+        <div id="timer">0초</div>
+        <button id="start">start</button>
+        <button id="reset">reset</button>
+        <script>
+            let seconds = 0;
+            let is_stopped = null;
+            const timeElement = document.getElementById("timer");
+            const startButton = document.getElementById("start")
+            const resetButton = document.getElementById("reset")
+            function changeTime() {
+                setInterval(() => {
+                seconds += 1;
+                timeElement.textContent = seconds + "초";
+            }, 1000);
+            }
+            startButton.addEventListener("click", () => {
+                if (is_stopped === null)
+            {
+                is_stopped =setInterval(() => {
+                    seconds += 1;
+                    timeElement.textContent = seconds + "초";
+                }, 1000)
+                startButton.disabled= true;
+            }
+            })
+            resetButton.addEventListener("click", () => {
+                clearInterval(is_stopped)
+                is_stopped = null;
+                seconds = 0;
+                timeElement.textContent = seconds + "초";
+                startButton.disabled= false;
+
+            })
+
+        </script>
+    </body>
+</head>
+</html>
